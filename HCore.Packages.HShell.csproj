@@ -11,6 +11,11 @@
         <ProjectReference Include="..\hcore\HCore.Modules.Base\HCore.Modules.Base.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Update="mpd" CopyToOutputDirectory="PreserveNewest" />
+        <None Update="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <Exec Command="mkdir -p $(ProjectDir)/../hcore/FS/packs/$(AssemblyName)/" />
         <Exec Command="cp -vr $(OutDir)/* $(ProjectDir)/../hcore/FS/packs/$(AssemblyName)/" />

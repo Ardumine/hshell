@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\hcore\src\HCore.Modules.Base\HCore.Modules.Base.csproj" />
+        <ProjectReference Include="HCore.Modules.Base/HCore.Modules.Base.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -23,5 +23,11 @@
 
     <ItemGroup>
         <PackageReference Include="ReadLine" Version="2.0.1" />
+    </ItemGroup>
+
+    <!-- Keep the Base submodule sources out of this package's compile. -->
+    <ItemGroup>
+        <Compile Remove="HCore.Modules.Base/**/*.cs" />
+        <None Remove="HCore.Modules.Base/**" />
     </ItemGroup>
 </Project>
